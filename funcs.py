@@ -8,10 +8,10 @@ def get_coor(image,threshold=0.3):
 
     output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
 
-    im_bytes = base64.b64decode(image)
+    im_bytes = base64.b64decode(image.encode('utf-8'))
     im_arr = np.frombuffer(im_bytes, dtype=np.uint8)  # im_arr is one-dim Numpy array
     img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
-    frame = cv2.resize(image, None, fx=0.4, fy=0.4)
+    frame = cv2.resize(img, None, fx=0.4, fy=0.4)
     # 640 * 420
     height, width, channels = frame.shape
 
@@ -47,3 +47,4 @@ def get_coor(image,threshold=0.3):
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
     print(indexes)
     print(confidences)
+    return str(boxes)

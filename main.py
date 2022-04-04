@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request
 import json
+from funcs import get_coor
 app = FastAPI()
 
 @app.get("/")
@@ -9,4 +10,4 @@ def read_root():
 async def return_test(request: Request):
         a= await request.json()
         image = json.loads(a)["b64"]
-        return len(image)
+        return get_coor(image,threshold=0.3)
