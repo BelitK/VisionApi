@@ -8,5 +8,5 @@ def read_root():
 @app.get("/test")
 async def return_test(request: Request):
         a= await request.json()
-        print(a["b64"])
-        return a["test"]
+        image = json.loads(a)["b64"]
+        return len(image)
