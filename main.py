@@ -7,7 +7,8 @@ app = FastAPI()
 def read_root():
         return{"Hello":"world"}
 @app.get("/vision")
-async def return_test(request: Request):
+async def boxes_and_confidence(request: Request):
+        ""
         a= await request.json()
         image = json.loads(a)["b64"]
         threshold = json.loads(a)["threshold"]

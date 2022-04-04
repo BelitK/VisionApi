@@ -22,6 +22,10 @@ a=requests.get(url,json=json.dumps(pay))
 print(a.content)
 
 
+# TODO get image from url implement
+# resp = requests.get(url, stream=True).raw
+# image = np.asarray(bytearray(resp.read()), dtype="uint8")
+# image = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
 img = cv2.imread(f"{test}")
 
