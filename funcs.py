@@ -47,4 +47,5 @@ def get_coor(image,threshold=0.3):
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
     print(indexes)
     print(confidences)
-    return str(boxes)
+    final = zip(boxes, confidences)
+    return final
