@@ -7,7 +7,7 @@ def get_coor(image,threshold=0.3):
     layer_names = net.getLayerNames()
 
     #output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
-    outputlayers = [layer_names[i-1] for i in net.getUnconnectedOutLayers()]
+    output_layers = [layer_names[i-1] for i in net.getUnconnectedOutLayers()]
     im_bytes = base64.b64decode(image.encode('utf-8'))
     im_arr = np.frombuffer(im_bytes, dtype=np.uint8)  # im_arr is one-dim Numpy array
     img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
