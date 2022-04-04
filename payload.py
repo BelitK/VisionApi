@@ -4,8 +4,8 @@ import cv2
 import requests
 import json
 from IPython import embed
-
-with open("test.jpg", "rb") as f:
+test = str(input())
+with open(test, "rb") as f:
     im_b64 = base64.b64encode(f.read()).decode("utf-8")
 # image = cv2.imread("test.jpg")
 # imm = cv2.imencode('.jpg', image)[1]#.tostring()
