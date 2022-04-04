@@ -30,7 +30,7 @@ def get_coor(image,threshold=0.3):
             confidence = scores[class_id]
             if confidence > threshold:
                 # nesne algilandi
-                print(class_id)
+                #print(class_id)
                 center_x = int(detection[0] * width)
                 center_y = int(detection[1] * height)
                 w = int(detection[2] * width)
@@ -45,7 +45,7 @@ def get_coor(image,threshold=0.3):
                 class_ids.append(class_id)
 
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
-    print(indexes)
-    print(confidences)
+    #print(indexes)
+    #print(confidences)
     final = {"boxes":boxes,"confidence": confidences}
     return final
