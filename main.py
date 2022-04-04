@@ -5,10 +5,10 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-        return{"Hello":"world"}
+        return{"Made By":"BelitK"}
 @app.get("/vision")
 async def boxes_and_confidence(request: Request):
-        ""
+        
         a= await request.json()
         image = json.loads(a)["b64"]
         threshold = json.loads(a)["threshold"]
