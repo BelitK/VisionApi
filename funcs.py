@@ -57,6 +57,7 @@ def get_coor(image, threshold=0.3):
 
 def get_human(image):
     """Human detection using Hog-SVM"""
+    human = []
     # set hog descriptor
     hog = cv2.HOGDescriptor()
     hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
@@ -69,5 +70,7 @@ def get_human(image):
                                        winStride=(5, 5),
                                        padding=(3, 3),
                                        scale=1.21)
-    final = {"boxes": [human for human in humans]}
+    for (x, y, w, h) in humans:
+        human.append([x, y, w, h])
+    final = {"boxes": human}
     return final
