@@ -15,8 +15,8 @@ def get_coor(image, threshold=0.3):
     # im_arr is one-dim Numpy array
     im_arr = np.frombuffer(im_bytes, dtype=np.uint8)
     img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
-    #frame = cv2.resize(img, None, fx=0.4, fy=0.4)
-    frame=img
+    # frame = cv2.resize(img, None, fx=0.4, fy=0.4)
+    frame = img
     # 640 * 420 image size limit for better performance
     height, width, channels = frame.shape
 
