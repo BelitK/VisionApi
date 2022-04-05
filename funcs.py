@@ -49,3 +49,5 @@ def get_coor(image,threshold=0.3):
     #print(confidences)
     final = {"boxes":boxes,"confidence": confidences}
     return final
+
+# TODO add human detection as second example
