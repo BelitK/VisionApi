@@ -69,5 +69,6 @@ def get_human(image):
                                        winStride=(5, 5),
                                        padding=(3, 3),
                                        scale=1.21)
-    final = {"boxes": humans}
+    print(type(humans))
+    final = {"boxes": list(humans)}
     return final
