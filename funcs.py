@@ -15,7 +15,8 @@ def get_coor(image, threshold=0.3):
     # im_arr is one-dim Numpy array
     im_arr = np.frombuffer(im_bytes, dtype=np.uint8)
     img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
-    frame = cv2.resize(img, None, fx=0.4, fy=0.4)
+    #frame = cv2.resize(img, None, fx=0.4, fy=0.4)
+    frame=img
     # 640 * 420 image size limit for better performance
     height, width, channels = frame.shape
 
@@ -57,7 +58,6 @@ def get_coor(image, threshold=0.3):
 
 def get_human(image):
     """Human detection using Hog-SVM"""
-    human = []
     # set hog descriptor
     hog = cv2.HOGDescriptor()
     hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
@@ -70,8 +70,6 @@ def get_human(image):
                                        winStride=(5, 5),
                                        padding=(3, 3),
                                        scale=1.21)
-    # print(type(humans))
-    # for (x, y, w, h) in humans:
-    #     human.append([x, y, w, h])
+
     final = {"boxes": humans.tolist()}
     return final
