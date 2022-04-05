@@ -70,6 +70,7 @@ def get_human(image):
                                        winStride=(5, 5),
                                        padding=(3, 3),
                                        scale=1.21)
+    print(type(humans))
     for (x, y, w, h) in humans:
         human.append([x, y, w, h])
     final = {"boxes": human}
