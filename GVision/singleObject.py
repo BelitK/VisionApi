@@ -19,14 +19,14 @@ pay = {
 
 json.dump(pay, open("test.json", "w"))
 headers = {
-    'Authorization': 'Bearer $gcloud auth application-default print-access-tokenya29.c.b0AXv0zTNN409hj_t_Ez9jvOihB4l5XG7ovLmeDlZn7-ymeuH1x5fGqvguqhJT_V1TLNtOaEVwTkbtfj-UAx9w6Iwq7wP1Appvel2Dx2D2gE5I_3jxE5XJSrXpolyFnyhrQvMXA1WbAMWUwMitqrxG2L3_kpmM4ccptg7wVbuCWu7TFxrwfa0NTkh-bA9QMzL2tMUUVkLbtyCIWwH-ZeHks41K5-HrMt8........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................',
+    'Authorization': 'insert token here',
     'Content-Type': 'application/json; charset=utf-8',
 }
 
 with open('test.json', "rb") as f:
     data = f.read()
 response = requests.post(
-    'https://automl.googleapis.com/v1beta1/projects/611280951148/locations/us-central1/models/ICN8855693149503225856:predict', headers=headers, data=data)
+    'insert adress here', headers=headers, data=data)
 
 sonuc = json.loads(response.content)
 print(sonuc)
